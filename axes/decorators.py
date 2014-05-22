@@ -84,8 +84,9 @@ def query2str(items, max_length=1024):
     """Turns a dictionary into an easy-to-read list of key-value pairs.
 
     If there's a field called "password" it will be excluded from the output.
+
+    The length of the output is limited to max_length to avoid a DoS attack.
     """
-    # Limit the length of the value to avoid a DoS attack
 
     kvs = []
     for k, v in items:
